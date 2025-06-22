@@ -1,0 +1,112 @@
+1️⃣ Type Error — In Depth
+What is a Type Error?
+A TypeError occurs when an operation or function is applied to an object of inappropriate type. Python’s dynamic typing means variables can hold any type, but operations must be type-compatible.
+
+Common causes:
+Incompatible operand types: Adding a string and an int.
+
+Calling methods that don’t exist on the type: e.g., calling .append() on a string.
+
+Incorrect function argument types: Passing the wrong type to a function.
+
+Unpacking errors: Trying to unpack a non-iterable.
+
+How to prevent?
+Explicitly convert types.
+
+Use type checking before operations.
+
+Follow function signatures strictly.
+
+2️⃣ Type Checking — In Depth
+Why check types?
+Though Python is dynamically typed, sometimes you want to ensure a variable is a certain type before processing to:
+
+Avoid runtime errors.
+
+Implement behavior differently based on type.
+
+Validate inputs in functions or APIs.
+
+Tools:
+type() function: Returns exact type, but can be restrictive (doesn’t consider inheritance).
+
+isinstance() function: Checks if an object is an instance of a class or its subclasses, preferred for polymorphic behavior.
+
+type() vs isinstance()
+
+class Animal: pass
+class Dog(Animal): pass
+
+d = Dog()
+
+print(type(d) == Animal)        # False — exact type match fails
+print(isinstance(d, Animal))    # True — d is subclass of Animal
+Use case examples:
+def greet(entity):
+    if isinstance(entity, str):
+        print("Hello, " + entity)
+    elif isinstance(entity, list):
+        print("Hello, list of people!")
+    else:
+        print("Hello, mysterious entity!")
+
+3️⃣ Type Conversion (Casting) — In Depth
+Explicit conversion
+Using built-in functions to convert types:
+
+int(): Converts floats or numeric strings to int (truncates decimals).
+
+float(): Converts int or numeric strings to float.
+
+str(): Converts anything to string.
+
+bool(): Converts value to True/False based on Python’s truthiness rules.
+
+Examples:
+
+int("123")       # 123
+float("3.14")    # 3.14
+str(100)         # "100"
+bool("")         # False (empty string is falsy)
+bool([1, 2, 3])  # True (non-empty list is truthy)
+Implicit conversion (coercion)
+Python automatically converts types in some expressions:
+
+Mixing int and float: result is float.
+
+For example, 3 + 4.5 results in 7.5 (float).
+
+Pitfalls to watch out for:
+Converting invalid strings raises ValueError:
+
+int("hello")  # ValueError
+Float to int truncates (does not round):
+
+int(3.9)  # 3
+Boolean conversion rules can surprise beginners:
+
+Zero, empty containers, and None are False.
+
+Everything else is True.
+
+Advanced: Custom type conversion
+Classes can define how they convert to basic types by implementing special methods:
+
+__int__(), __float__(), __str__(), __bool__()
+
+Example:
+class MyNumber:
+    def __int__(self):
+        return 42
+
+num = MyNumber()
+print(int(num))  # 42
+
+
+Summary Best Practices:
+Action	                        How to do it	                            Why?
+Avoid Type Errors	            Use explicit type conversion	            Prevent runtime crashes
+Check Types	                    Use isinstance() instead of type()	        Supports subclass checks and polymorphism
+Convert Types Explicitly	    Use int(), str(), float(), bool()	        Control data formats and behavior
+Handle Conversion Failures	    Use try-except when converting	            Gracefully handle invalid inputs
