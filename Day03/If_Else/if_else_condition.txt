@@ -1,0 +1,60 @@
+🔍 What is if-else in Python?
+The if, elif, and else keywords are used to control the flow of your program by allowing it to make decisions based on conditions.
+
+Python checks a condition — if it's true, a block of code runs. If it's false, it checks the next condition (if using elif) or runs a final block (if using else).
+
+🧠 How It Works
+if:
+
+Starts the decision-making.
+
+Evaluates a condition (like comparing numbers or checking a variable).
+
+If the condition is true, the indented block under the if runs.
+
+If false, Python moves on.
+
+elif (short for “else if”):
+
+Optional.
+
+Adds more conditions to check if the initial if was false.
+
+Python checks them in order, top to bottom.
+
+else:
+
+Optional.
+
+Runs if none of the previous if or elif conditions were true.
+
+Acts as a "fallback" or default action.
+
+📌 Important Characteristics
+Only the first true condition runs. After that, Python skips the rest.
+
+You can have multiple elif branches, but only one if and one else.
+
+The body of each condition must be indented.
+
+Conditions are usually created using comparison and logical operators.
+
+🔗 When to Use
+Making choices in your program.
+
+Responding to user input.
+
+Creating branching logic (e.g., menus, game rules, scoring systems).
+
+Handling error checking or alternate outcomes.
+
+🧠 Real-Life Analogy
+Think of if-elif-else like traffic lights:
+
+If the light is green → Go
+
+Else if it’s yellow → Slow down
+
+Else (must be red) → Stop
+
+Only one action happens, based on the current condition.

@@ -1,0 +1,54 @@
+🔁 What Is the Modulo Operator?
+The modulo operator, symbolized by a percent sign %, is a mathematical operator that gives you the remainder after one number is divided by another.
+
+🔹 Think of it as:
+"What’s left over after division?"
+
+For example, if you divide 10 by 3:
+
+3 goes into 10 three times (3 × 3 = 9)
+
+The leftover (remainder) is 1
+
+So: 10 modulo 3 is 1
+
+🧠 What Does It Do?
+It checks the remainder of a division.
+
+If the number divides evenly (no remainder), the result is 0.
+
+If there's a leftover part, it gives you that number.
+
+📌 Why Is It Useful?
+1. Checking Even or Odd Numbers
+Any number divided by 2 will have:
+
+A remainder of 0 → it's even
+
+A remainder of 1 → it's odd
+
+2. Looping and Repetition
+Modulo helps cycle through patterns or restart counters.
+
+Example: Looping through days of the week or rotating between 0 to 4 repeatedly.
+
+3. Divisibility Checks
+If a % b equals 0, then a is divisible by b.
+
+4. Special Number Problems
+Used in algorithms, calendars, time calculations, and puzzles.
+
+⚠️ Important Notes
+The result of modulo is always non-negative if the divisor is positive (in Python).
+
+Modulo is not the same as division. It only gives the leftover part — not the whole result.
+
+🧪 Real-World Example
+Imagine you have 17 cookies and you want to give 5 to each friend:
+
+Each friend gets 5 cookies
+
+After giving cookies to 3 friends (15 total), you have 2 cookies left
+
+That leftover 2 is the modulo result (17 modulo 5)
+
