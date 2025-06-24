@@ -1,4 +1,4 @@
-# Task - Print your name, age, and hobby using f-string.
+# Task - printing your name, age, and hobby using f-string.
 name = "Nikko"
 age = 25
 hobby = "Fishing"

@@ -8,13 +8,13 @@ print("Hello", name)
 data = input("Type something: ")
 print(type(data)) # <class 'str'>
 
-#Type Conversion (Converting Input) - You must convert input if you want an integer or float:
+#Type Conversion (Converting input_function) - You must convert input if you want an integer or float:
 age = int(input("Enter your age: ")) # int() for integers
 height = float(input("Enter your height in meters: ")) #float() for decimal numbers
 #⚠️ If the user types something invalid, it causes an error.
 
 
-#Handling Invalid Input (Try-Except) - Useful for preventing crashes.
+#Handling Invalid input_function (Try-Except) - Useful for preventing crashes.
 try:
     number = int(input("Enter a number: "))
 except ValueError:
@@ -29,12 +29,12 @@ username = input("Username: ").strip()
 # .rstrip() → removes only right spaces
 
 
-#Check for Empty Input
+#Check for Empty input_function
 user_input = input("Enter something: ").strip()
 if not user_input:
     print("You didn’t type anything!")
 
-#Hidden Input (Passwords) - Use getpass for hidden input, like passwords:
+#Hidden input_function (Passwords) - Use getpass for hidden input, like passwords:
 from getpass import getpass
 password = getpass("Password: ") #It hides what the user types.
 
@@ -43,12 +43,12 @@ x, y = input("Enter two values: ").split()
 #Gives you two strings. To convert to numbers:
 a, b = map(int, input("Enter two numbers: ").split())
 
-#Get a List from Input
+#Get a List from input_function
 numbers = list(map(int, input("Enter numbers separated by space: ").split()))
-#Input: 5 10 15   Output: [5, 10, 15]
+#input_function: 5 10 15   Output: [5, 10, 15]
 
 
-#Loop Until Valid Input - Useful in games, quizzes, and interactive apps.
+#Loop Until Valid input_function - Useful in games, quizzes, and interactive apps.
 while True:
     try:
         number = int(input("Enter a number: "))
@@ -57,14 +57,14 @@ while True:
         print("Invalid! Try again.")
 
 
-#Input with Default Values - If the user presses Enter without typing, it uses "John"
+#input_function with Default Values - If the user presses Enter without typing, it uses "John"
 name = input("Enter your name [default: John]: ") or "John"
 
 #Evaluate Math Expressions (Dangerous!) - ⚠️ Never use eval() with user input in real-world applications — it’s dangerous.
-result = eval(input("Enter math expression: ")) #Input: 5 + 2 * 3   Output: 11
+result = eval(input("Enter math expression: ")) #input_function: 5 + 2 * 3   Output: 11
 
 
-#Unicode Input (Multilingual) - Works well with Turkish, Arabic, Cyrillic, Japanese, etc.
+#Unicode input_function (Multilingual) - Works well with Turkish, Arabic, Cyrillic, Japanese, etc.
 isim = input("İsmin nedir? ")
 print("Merhaba", isim)
 
@@ -74,7 +74,7 @@ answer = input("Do you agree? (y/n): ").lower()
 if answer == 'y':
     print("You agreed.")
 
-#Reusable Input Function - You can define your own smart input function:
+#Reusable input_function Function - You can define your own smart input function:
 def ask_int(prompt="Enter an integer: "):
     while True:
         try:

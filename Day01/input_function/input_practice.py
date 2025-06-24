@@ -1,4 +1,4 @@
-#Input-Driven Mini Program
+#input_function-Driven Mini Program
 while True:
     user = input("Type a command (help/exit): ").strip().lower()
     if user == "help":
