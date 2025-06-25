@@ -1,5 +1,6 @@
 🔍 What Are Logical Operators?
-Logical operators are tools that allow Python to combine or modify conditions. They're used in decision-making, especially with if, elif, and while statements.
+Logical operators are tools that allow Python to combine or modify conditions.
+They're used in decision-making, especially with if, elif, and while statements.
 
 These operators help answer questions like:
 
