@@ -1,0 +1,92 @@
+🔄 Loops in Python — A Deep Dive
+What Are Loops?
+Loops are control structures that let you repeat a block of code multiple times without rewriting the same code again and again. They help automate repetitive tasks efficiently.
+
+Why Use Loops?
+To process items in a collection (like lists or strings)
+
+To repeat tasks until a condition changes
+
+To reduce code duplication and errors
+
+To make programs dynamic and scalable
+
+Types of Loops in Python
+1. for Loop — Iterate Over a Sequence
+The for loop runs a block of code once for each item in a sequence (like a list, tuple, string, or range).
+
+Key concept: You don't manually manage the loop variable's values — Python automatically moves through the sequence.
+
+2. while Loop — Repeat While Condition Is True
+The while loop repeats the block of code as long as a condition is true. It’s like saying: “Keep doing this until the condition fails.”
+
+Anatomy of a Loop
+Regardless of type, a loop generally consists of:
+
+Initialization: (sometimes implicit) setting up variables or conditions before looping.
+
+Condition: A test that decides whether the loop continues.
+
+Body: The code that runs repeatedly.
+
+Update: (implicit or explicit) change loop variables or state to eventually end the loop.
+
+for Loop — Detailed Explanation
+Used when the number of iterations or the collection is known upfront.
+
+Iterates over any iterable — lists, strings, tuples, dictionaries, sets, ranges, generators.
+
+Example use cases:
+
+Processing elements in a list.
+
+Looping over characters in a string.
+
+Counting a fixed number of times.
+
+while Loop — Detailed Explanation
+Used when you want to repeat until a certain condition changes, but you may not know in advance how many times it will run.
+
+Requires careful management of the condition inside the loop.
+
+If condition never becomes false, you get an infinite loop.
+
+Common use cases:
+
+Waiting for user input.
+
+Running a program until a “quit” command.
+
+Repeating until a value reaches a threshold.
+
+Loop Control Statements (Advanced)
+break — Immediately exits the loop.
+
+continue — Skips the rest of the current iteration, jumps to the next.
+
+else on loops — runs if the loop completes normally (no break).
+
+Common Patterns & Concepts
+Nested loops: loops inside loops for multi-dimensional data.
+
+Loop with range(): to loop a specific number of times.
+
+Enumerate: get index and value together in for loops.
+
+Iterating dictionaries: looping over keys, values, or items.
+
+Things to Watch Out For
+Avoid infinite loops with while — make sure condition changes.
+
+Efficient loops vs. slow loops — large loops can slow down programs.
+
+Use built-in functions and comprehensions for better performance and cleaner code.
+
+Summary Table
+| Loop Type  | Use When…                              | Characteristics                            |
+| ---------- | -------------------------------------- | ------------------------------------------ |
+| `for`      | Known number or collection to iterate  | Iterates over items in a sequence          |
+| `while`    | Repeat until condition changes         | Continues until condition becomes False    |
+| `break`    | Exit loop early                        | Stops loop immediately                     |
+| `continue` | Skip current iteration                 | Goes to next iteration immediately         |
+| `else`     | Run code after loop completes normally | Runs only if no `break` is hit inside loop |
