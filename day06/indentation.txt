@@ -1,0 +1,48 @@
+🧱 Indentation in Python (Detailed Explanation)
+
+https://peps.python.org/pep-0008/
+
+✅ What Is Indentation?
+Indentation refers to the spaces or tabs used at the beginning of a line of code to define blocks of code.
+Unlike many other programming languages (like C, Java, or JavaScript), Python uses indentation instead of
+braces {} to define blocks.
+
+In Python, indentation is not optional — it’s syntax. Incorrect indentation will result in a IndentationError
+or cause your program to behave unexpectedly.
+
+🎯 Why Is Indentation Important in Python?
+Python uses indentation to:
+
+Group related lines together (like inside if, for, def, etc.)
+
+Understand the structure and flow of your code
+
+Replace symbols like {} used in other languages
+
+📏 Python Indentation Rules
+Consistent indentation is required in a block.
+
+Recommended: 4 spaces per indentation level (as per PEP 8).
+
+Never mix tabs and spaces.
+
+All lines in a block must be equally indented.
+
+📂 Indentation Used In:
+| Control Structure          | Requires Indentation |
+| -------------------------- | -------------------- |
+| `if`, `elif`, `else`       | ✅ Yes                |
+| `for`, `while`             | ✅ Yes                |
+| `def`, `class`             | ✅ Yes                |
+| `try`, `except`, `finally` | ✅ Yes                |
+| Any nested block           | ✅ Yes                |
+
+💡 Tips
+Use spaces, not tabs (PEP 8 strongly recommends 4 spaces).
+
+Use a modern code editor (like VS Code or PyCharm) that handles indentation automatically.
+
+Be aware of invisible characters — mixed spaces/tabs can break your code.
+
+Use tools like flake8 or black to keep indentation clean.
+
