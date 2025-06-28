@@ -1,0 +1,102 @@
+🔁 while Loop in Python — Detailed Guide
+🧠 What is a while Loop?
+A while loop is used to repeat a block of code as long as a certain condition is True.
+It is ideal when you don’t know in advance how many times the loop will run.
+
+🔹 Syntax:
+while condition:
+    # block of code
+
+The loop will continue executing the indented block as long as the condition remains True.
+
+✅ Basic Example
+
+count = 1
+while count <= 5:
+    print("Count is:", count)
+    count += 1
+📌 Output:
+
+csharp
+Copy
+Edit
+Count is: 1
+Count is: 2
+Count is: 3
+Count is: 4
+Count is: 5
+🔁 Infinite Loop
+If the condition never becomes False, the loop will run forever (⚠️ be careful!).
+
+while True:
+    print("This will go forever!")
+Use Ctrl + C to stop an infinite loop in the terminal.
+
+🔚 break Statement
+You can stop the loop manually with break.
+
+
+i = 0
+while True:
+    print(i)
+    i += 1
+    if i == 3:
+        break
+🔁 continue Statement
+Skips the current iteration and goes to the next one.
+
+
+i = 0
+while i < 5:
+    i += 1
+    if i == 3:
+        continue
+    print(i)
+📌 Output:
+
+1
+2
+4
+5
+❗ Common Mistake: Missing Update
+
+i = 0
+while i < 3:
+    print(i)
+    # i += 1  ← if missing, this will cause infinite loop
+Always make sure the loop changes something so the condition can eventually become False.
+
+🧠 Use Cases for while Loop
+Wait for user input
+
+Retry until valid data is entered
+
+Monitor real-time system status
+
+Repeat action until a condition changes
+
+🔄 while with else
+Python allows an else clause with while (uncommon but useful):
+
+i = 0
+while i < 3:
+    print(i)
+    i += 1
+else:
+    print("Loop finished.")
+📌 Output:
+
+0
+1
+2
+Loop finished.
+The else block runs only if the loop wasn’t terminated with break.
+
+💡 Best Practices
+Always ensure your loop can end.
+
+Avoid deeply nested while loops unless necessary.
+
+Use descriptive variables (attempt, count, index, etc.).
+
+Prefer for loop when the number of iterations is known.
