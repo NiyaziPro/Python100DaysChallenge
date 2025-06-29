@@ -1,9 +1,9 @@
 import random
 import hangman_worlds
 import hangman_art
-import colors
+from utils import colors
 
-print(colors.green+hangman_art.logo, "\n", colors.reset)
+print(colors.green + hangman_art.logo, "\n", colors.reset)
 lives = 6
 random_word = random.choice(hangman_worlds.word_list)
 placeholder = ""
