@@ -42,3 +42,27 @@ def greet(name="Guest"):
     print(f"Hi, {name} :)")
 greet()             # Output: Hi, Guest :)
 greet("Stanley")    # Output: Hi, Stanley :)
+
+# Function returning a value
+def multiply(a,b):
+    return a*b
+print(multiply(5,4))
+
+# Variable number of inputs
+# *args -> accepts multiple positional arguments as a tuple:
+def total(*numbers):
+    return sum(numbers)
+print(total(5,6,7,8))
+
+# **kwargs -> accepts multiple keyword arguments as a dictionary:
+def user_info(**info):
+    print(info)
+user_info(name="Alice", age=34,salary="$ 100000")
+
+# Full function:
+def student_report(name, grade=100):
+    print(f"Student: {name}",end=" | ")
+    print(f"Grade: {grade}")
+
+student_report("Ece")  # uses default grade
+student_report("Mert", 85)
