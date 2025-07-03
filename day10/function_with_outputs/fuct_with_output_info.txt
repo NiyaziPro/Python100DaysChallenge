@@ -1,0 +1,56 @@
+🧠 What Is a Function with Output?
+A function with output is a block of code that returns a value when called. This is done using the return statement.
+ The returned value can be stored in a variable, used in expressions, or passed into other functions.
+
+✅ Why Use Output Functions?
+Reusability: Encapsulate logic and reuse it anywhere.
+
+Modularity: Break down large problems into manageable units.
+
+Testability: Easier to test functions that return outputs.
+
+Composition: Use the result of one function in another.
+
+📌 Key Concepts
+🔸 1. return Statement
+Tells the function to send a result back to the caller.
+
+Ends the function immediately — any code after return is ignored.
+
+You can return:
+
+A single value (int, str, list, etc.)
+
+Multiple values (as a tuple)
+
+Another function (advanced)
+
+🔸 2. Receiving the Output
+The value returned by the function can be assigned to a variable.
+
+It can also be used directly inside another expression.
+
+🧪 Behavior Details
+If no return is given, the function returns None by default.
+
+You can return early using return without a value to stop execution.
+
+⚠️ Best Practices
+Always return values instead of printing them inside the function (unless printing is the purpose).
+
+Keep functions focused: one function = one responsibility.
+
+Name functions clearly based on what they return (e.g., get_total(), calculate_area()).
+
+🧩 Example Scenarios (Conceptual)
+A function that adds two numbers and returns the sum.
+
+A function that checks a condition and returns True or False.
+
+A function that processes a list and returns a modified version.
+
+A function that calculates something and passes the result to another.
+
+🔁 Returning Multiple Values
+You can return multiple values using commas (Python wraps them in a tuple). The caller can unpack them into separate variables.
+
