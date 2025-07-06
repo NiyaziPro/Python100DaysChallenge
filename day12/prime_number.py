@@ -16,6 +16,7 @@ def is_prime(num):
     # this return is outside the for loop which will only run once the loop finishes and none of the numbers are divisible. Therefore it is prime.
     return True
 
-num = random.randint(0,1001)
+
+num = random.randint(0, 1001)
 print(num)
 print(is_prime(num))
