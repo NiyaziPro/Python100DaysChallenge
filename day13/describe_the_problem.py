@@ -26,7 +26,7 @@ my_function()
 dice_images = ["❶", "❷", "❸", "❹", "❺", "❻"]
 dice_num = randint(1, 6)  # false -> should be randint(0, 5)
 print(dice_images[dice_num])
-
+# randint -> Return random integer in range [a, b], including both end points.
 
 
 year = int(input("What's your year of birth?\n"))
