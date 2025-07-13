@@ -1,5 +1,6 @@
-class CarBlueprint:
-    pass
+class Car:
+    def stop(self):
+        print("stop")
 
 
-car = CarBlueprint()
+car = Car()
