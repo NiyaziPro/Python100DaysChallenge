@@ -1,0 +1,116 @@
+Object-Oriented Programming (OOP) in Python — Detailed Explanation
+
+What is OOP?
+OOP is a programming paradigm based on the concept of “objects”,
+which can contain data (attributes or properties) and code (methods or functions).
+It organizes software design around these objects rather than just functions and logic.
+
+Why OOP?
+Modularity: Code is divided into separate objects/classes.
+Reusability: Classes can be reused across programs.
+Maintainability: Easier to update and debug.
+Abstraction: Hide complexity.
+
+Modeling Real World: Mimics real-world entities making code intuitive.
+
+Core Concepts of OOP
+1. Classes and Objects
+Class: A blueprint for creating objects.
+
+Defines what data (attributes) the object holds.
+
+Defines what behaviors (methods) the object can perform.
+
+Object (Instance): A concrete instantiation of a class.
+
+Example analogy:
+
+Class = blueprint for a house.
+
+Object = an actual house built from that blueprint.
+
+2. Attributes and Methods
+Attributes: Variables that hold data for an object.
+
+Methods: Functions defined inside a class that describe the behaviors of an object.
+
+Attributes represent the state, methods represent the behavior.
+
+3. Encapsulation
+Encapsulation means bundling data (attributes) and code (methods) together into a single unit (class).
+
+Controls access to the internal state via public, protected, and private access.
+
+Python uses naming conventions:
+
+public_var → accessible anywhere
+
+_protected_var → intended as “protected” (convention)
+
+__private_var → name mangling for private (not truly private but harder to access)
+
+Purpose: Prevent accidental modification and keep internal representation hidden.
+
+4. Inheritance
+A class (called child or subclass) can inherit attributes and methods from another class (called parent or superclass).
+
+Allows code reuse and extension of existing code.
+
+Example:
+
+Animal class → base class
+
+Dog and Cat classes inherit from Animal but can have their own extra features.
+
+5. Polymorphism
+Means “many forms.”
+
+Allows objects of different classes to be treated as objects of a common superclass.
+
+Method overriding allows a subclass to provide a specific implementation of a method already defined in its superclass.
+
+Example:
+
+Method speak() could behave differently for Dog and Cat objects even though the method name is the same.
+
+6. Abstraction
+Hides complex implementation details and shows only the necessary parts.
+
+Helps reduce programming complexity and increases efficiency.
+
+In Python, abstraction can be implemented using abstract base classes (ABC) and interfaces.
+
+Additional OOP Features in Python
+Constructors (__init__ method)
+Special method to initialize new objects.
+
+Called automatically when a new object is created.
+
+Special Methods (Dunder Methods)
+Methods like __str__, __repr__, __add__ allow customization of object behavior.
+
+How OOP Works Step-by-Step
+Define a class with attributes and methods.
+
+Create objects (instances) from the class.
+
+Access attributes and call methods on those objects.
+
+Use inheritance to extend or customize behavior.
+
+Use polymorphism to treat different objects in a common way.
+
+Summary Table
+
+| Concept       | Description                                    | Purpose                           |
+| ------------- | ---------------------------------------------- | --------------------------------- |
+| Class         | Blueprint for objects                          | Defines structure and behavior    |
+| Object        | Instance of a class                            | Holds data and performs behavior  |
+| Attribute     | Data stored in an object                       | Represents object state           |
+| Method        | Function defined in a class                    | Represents behavior/action        |
+| Encapsulation | Bundling data and methods; access control      | Protect internal state            |
+| Inheritance   | Deriving new classes from existing ones        | Code reuse and extension          |
+| Polymorphism  | Same interface, different behavior             | Flexibility in method behavior    |
+| Abstraction   | Hiding complexity, exposing essential features | Simplify interaction with objects |
+
+---
