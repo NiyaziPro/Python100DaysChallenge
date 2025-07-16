@@ -19,13 +19,5 @@ for line in range(4):
     timmy.left(90)
 
 
-
-
-
-
-
-
-
-
 screen = Screen()
 screen.exitonclick()
