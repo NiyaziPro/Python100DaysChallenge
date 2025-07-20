@@ -1,7 +1,7 @@
 import pygame
-import time
 import random
 
+# SNAKE - GAME
 # Initialize pygame
 pygame.init()
 
