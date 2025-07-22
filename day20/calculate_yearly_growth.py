@@ -1,6 +1,5 @@
 # Daily Compound Growth Calculator
 # Calculates the result of raising a number to the power of 365
-# Press 'q' to quit
 
 def calculate_yearly_growth():
     while True:
