@@ -1,10 +1,13 @@
+import time
 from turtle import Turtle, Screen
+
+from day20.snake.snake import Snake
 
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("My Snake Game")
-
+screen.tracer(0)
 
 # segment_1 = Turtle(shape="square")
 # segment_1.color("white")
@@ -17,20 +20,16 @@ screen.title("My Snake Game")
 # segment_3.color("white")
 # segment_3.goto(-40, 0)
 
-starting_positions = [(0, 0), (-20, 0), (-40, 0)]
+# https://docs.python.org/3.3/library/turtle.html?highlight=turtle#turtle.tracer
 
-segments = []
+snake = Snake()
 
-for position in starting_positions:
-    new_segment = Turtle("square")
-    new_segment.color("white")
-    new_segment.goto(position)
-    segments.append(new_segment)
+game_is_on = True
+while game_is_on:
+    screen.update()
+    time.sleep(0.1)
 
-
-
-
-
+    snake.move()
 
 
 screen.exitonclick()
