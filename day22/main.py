@@ -14,24 +14,22 @@ paddle.penup()
 paddle.goto(350, 0)
 
 
-
 def go_up():
     new_y = paddle.ycor() + 20
     paddle.goto(paddle.xcor(), new_y)
 
+
 def go_down():
-    new_x = paddle.xcor() + 20
-    paddle.goto(new_x, paddle.ycor())
+    new_y = paddle.ycor() - 20
+    paddle.goto(paddle.xcor(), new_y)
 
 
 screen.listen()
 screen.onkey(go_up, "Up")
 screen.onkey(go_down, "Down")
 
-
 game_is_on = True
 while game_is_on:
     screen.update()
-
 
 screen.exitonclick()
