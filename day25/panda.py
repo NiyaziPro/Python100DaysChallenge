@@ -12,7 +12,7 @@ temp_list = data["temp"].to_list()
 print(len(temp_list))
 
 average = sum(temp_list) / len(temp_list)
-print(round(average,2))
+print(round(average, 2))
 
 print(data["temp"].mean())
 print(data["temp"].min())
@@ -28,4 +28,13 @@ print(data[data.temp == data.temp.max()])
 
 monday = data[data.day == "Monday"]
 print(monday.condition)
-print((monday.temp * 1.8) +32)
+print((monday.temp * 1.8) + 32)
+
+# Create a data frame from scratch
+data_dict = {
+    "students": ["Any", "Jack", "Mery"],
+    "scores": [77, 55, 97]
+}
+
+data2 = pandas.DataFrame(data_dict)
+data2.to_csv("new_data.csv")
