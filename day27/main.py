@@ -12,10 +12,14 @@ window.title("My First GUI Program")
 window.minsize(width=600, height=400)
 
 # Label
-my_label = tkinter.Label(text="I'm a Label", font=("Courier", 24, "bold"))
-my_label.pack()
+my_label = tkinter.Label(text="I'm a Label", font=("Courier", 15, "bold"))
+my_label.pack(side="left")
 
-t = Turtle()
-t.write()
 
 window.mainloop()
+
+
+def add(*n): # *args
+    print(sum(n))
+
+add(4,5,6,7,8)
