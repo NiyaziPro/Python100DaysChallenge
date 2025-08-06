@@ -5,10 +5,16 @@ from tkinter import messagebox
 import pandas
 
 BACKGROUND_COLOR = "#B1DDC6"
-
-data = pandas.read_csv("./data/english_bg_words.csv")
-to_learn = data.to_dict(orient="records")
 current_card = {}
+to_learn = {}
+
+try:
+    data = pandas.read_csv("./data/world_to_learn.csv")
+except FileNotFoundError:
+    original_data = pandas.read_csv("./data/english_bg_words.csv")
+    to_learn = original_data.to_dict(orient="records")
+else:
+    to_learn = data.to_dict(orient="records")
 
 
 def next_card():
@@ -25,6 +31,13 @@ def flip_card():
     canvas.itemconfig(card_title, text="Bulgarian", fill="white")
     canvas.itemconfig(card_word, text=current_card["Bulgarian"], fill="white")
     canvas.itemconfig(card_bg, image=back_img)
+
+
+def is_known():
+    to_learn.remove(current_card)
+    data = pandas.DataFrame(to_learn)
+    data.to_csv("./data/world_to_learn.csv", index=False)
+    next_card()
 
 
 window = Tk()
@@ -52,7 +65,7 @@ try:
 except TclError:
     messagebox.showwarning(title="Warning", message="Image not found!")
 
-right_button = Button(image=right_image, highlightthickness=0, cursor="hand2", command=next_card)
+right_button = Button(image=right_image, highlightthickness=0, cursor="hand2", command=is_known)
 wrong_button = Button(image=wrong_image, highlightthickness=0, cursor="hand2", command=next_card)
 right_button.grid(column=1, row=1)
 wrong_button.grid(column=0, row=1)
