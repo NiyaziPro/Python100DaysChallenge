@@ -4,3 +4,5 @@ https://www.askpython.com/
 https://tkdocs.com/tutorial/canvas.html
 https://tkdocs.com/tutorial/widgets.html#entry
 https://www.w3schools.com/python/python_file_write.asp
+
+https://docs.python.org/3/library/smtplib.html
