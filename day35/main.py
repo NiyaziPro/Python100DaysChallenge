@@ -1,8 +1,12 @@
+import os
+
 import requests
+from dotenv import load_dotenv
 
 BASE_URL = "https://api.openweathermap.org/data/2.5/forecast"
 
-API_KEY = "Your Api Key"
+load_dotenv()
+API_KEY = os.getenv("API_KEY")
 
 MY_LAT = 53.865467
 MY_LONG = 10.686559
