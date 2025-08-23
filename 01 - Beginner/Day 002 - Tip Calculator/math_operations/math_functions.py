@@ -1,4 +1,4 @@
-# Advanced math functions
+# 03 - Advanced math functions
 
 # Function	    Use	                            Example
 # abs(x)	    Absolute value	                abs(-10) → 10

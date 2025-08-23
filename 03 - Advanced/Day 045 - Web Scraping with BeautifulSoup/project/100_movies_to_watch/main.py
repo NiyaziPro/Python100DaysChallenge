@@ -14,6 +14,6 @@ movie_titles = [movie.getText() for movie in movies]
 
 movie_titles.reverse() # OR movie_titles[::-1]
 
-with open("movies.txt", mode="w",encoding="utf-8") as file:
+with open("movies.txt", mode="w", encoding="utf-8") as file:
     for movie in movie_titles:
         file.write(f"{movie}\n")

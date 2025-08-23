@@ -154,3 +154,5 @@ if total_booked == verified_count:
     print("✅ SUCCESS: All bookings verified!")
 else:
     print(f"❌ MISMATCH: Missing {total_booked - verified_count} bookings")
+
+driver.quit()
