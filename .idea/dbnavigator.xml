@@ -32,9 +32,7 @@ SELECT * FROM users.user]]></console>
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="a84dc8fd-d20f-4bbf-a467-f87f188c8d5b" object-ref="consoles/Connection" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="a84dc8fd-d20f-4bbf-a467-f87f188c8d5b" />
@@ -93,7 +91,7 @@ SELECT * FROM users.user]]></console>
           <session-user value="" />
         </database>
         <properties>
-          <auto-commit value="false" />
+          <auto-commit value="true" />
         </properties>
         <ssh-settings>
           <active value="false" />
