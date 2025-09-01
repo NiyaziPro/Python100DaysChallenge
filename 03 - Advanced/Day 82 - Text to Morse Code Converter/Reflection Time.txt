@@ -1,0 +1,25 @@
+How I approached the project:
+I started by breaking down the problem into small steps:
+
+Create a dictionary that maps characters to Morse Code.
+
+Write a function that loops through each character of the input and converts it.
+
+Add a simple text-based interface so the user can type something in and get the result back.
+
+I kept the first version simple before thinking about extras like error handling or reversing the translation.
+
+What was hard:
+The hardest part was figuring out how to handle characters not supported by Morse Code (like punctuation or emojis). I also had to make sure the output format looked consistent and readable.
+
+What was easy:
+Setting up the dictionary and writing the main conversion function felt pretty straightforward. Once the logic was clear, the code came together quickly.
+
+How I might improve for the next project:
+I would plan for more features from the start, like two-way translation (Morse ↔ text) or sound output for dots and dashes. Also, writing tests to automatically check that my conversion works correctly would make debugging easier.
+
+My biggest learning from today:
+I learned how helpful it is to structure a project step by step rather than jumping straight into coding. Starting with a clear mapping (the dictionary) saved a lot of confusion later.
+
+What I would do differently next time:
+I would design the program with scalability in mind—thinking about both text-to-Morse and Morse-to-text early on, rather than adding it later. I’d also explore adding a more interactive user experience.
