@@ -1,0 +1,64 @@
+Reflection Journal – Portfolio Website Project
+How I approached the project
+
+I started by planning the structure of my portfolio website. I sketched a rough wireframe with sections I wanted to include:
+
+A hero section with my name, a short tagline, and a call-to-action button.
+
+An about section to introduce myself and explain my skills.
+
+A projects section to showcase my work with screenshots, descriptions, and links.
+
+A contact section with a form and social links.
+
+After sketching, I thought about the design details: a clean, modern look with a minimal color scheme (dark background, accent color for highlights, and lots of whitespace). For typography, I picked one bold heading font and a clean, readable body font.
+
+Then I broke the project into smaller steps:
+
+Build the structure with HTML.
+
+Add styles with CSS (flexbox/grid for layout).
+
+Add interactivity with a little JavaScript (smooth scrolling, animations).
+
+Optimize for responsiveness.
+
+What was hard
+
+Choosing a design: I wanted it to look unique but also professional. It was tough balancing creativity with usability.
+
+Responsiveness: Getting the layout to work well across different screen sizes took a lot of testing.
+
+Showcasing projects: I don’t have a huge portfolio yet, so deciding what to include and how to present it was tricky.
+
+What was easy
+
+Basic structure: Once I knew the sections I wanted, writing the initial HTML was straightforward.
+
+Styling with CSS variables: Setting up a color palette and reusing it made the styling consistent and easier.
+
+Adding animations: Using CSS transitions and small JavaScript effects made the site feel more dynamic.
+
+How I might improve next time
+
+Spend more time on the design phase before coding so I have a clearer vision.
+
+Add more interactivity, such as filtering projects or using modals for detailed views.
+
+Work on performance optimization (lazy loading images, minifying code).
+
+Write cleaner, reusable CSS, possibly using a framework like Tailwind or SCSS.
+
+Biggest learning from today
+
+My biggest takeaway was that design is just as important as code. It’s not enough to make something functional — it also needs to look polished and reflect my personality as a developer. I also learned the value of planning: sketching and deciding colors/fonts ahead of time saved me frustration later.
+
+What I’d do differently if I tackled this project again
+
+Start with a mood board or inspiration board before coding.
+
+Use a mobile-first approach to design instead of adjusting for mobile later.
+
+Add testimonials or a blog section to make the portfolio feel more alive and engaging.
+
+Possibly use a static site generator (like Next.js or Astro) for scalability.
