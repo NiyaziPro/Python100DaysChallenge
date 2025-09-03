@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Projects - Niyazi Developer{% endblock %}
+
+{% block content %}
+<div class="container" style="margin-top: 100px;">
+    <section class="section-padding">
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold">My Projects</h1>
+            <p class="lead text-muted">A showcase of my work and accomplishments</p>
+        </div>
+        
+        <div class="row g-4">
+            {% for project in projects %}
+            <div class="col-lg-6 col-md-6">
+                <div class="card project-card h-100">
+                    <div class="overflow-hidden">
+                        <img src="https://via.placeholder.com/500x300/6c63ff/ffffff?text={{ project.title }}" 
+                             class="card-img-top" alt="{{ project.title }}">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text flex-grow-1">{{ project.description }}</p>
+                        <div class="mb-3">
+                            {% for tech in project.tech %}
+                                <span class="skill-badge">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="d-flex gap-2">
+                            <a href="{{ project.github }}" class="btn btn-outline-primary flex-fill" target="_blank">
+                                <i class="fab fa-github me-1"></i>View Code
+                            </a>
+                            <a href="{{ project.demo }}" class="btn btn-primary flex-fill" target="_blank">
+                                <i class="fas fa-external-link-alt me-1"></i>Live Demo
+                            </a>
+                            <a href="{{ url_for('project_detail', project_id=project.id) }}" class="btn btn-secondary">
+                                <i class="fas fa-info-circle"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <!-- Additional Projects Section -->
+        <div class="mt-5">
+            <h3 class="text-center mb-4">More Projects Coming Soon</h3>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="fas fa-plus-circle text-primary" style="font-size: 3rem;"></i>
+                            <h5 class="card-title mt-3">New Project</h5>
+                            <p class="card-text">Currently working on an exciting new project. Stay tuned!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="fas fa-lightbulb text-warning" style="font-size: 3rem;"></i>
+                            <h5 class="card-title mt-3">Have an Idea?</h5>
+                            <p class="card-text">Let's collaborate on your next project!</p>
+                            <a href="{{ url_for('contact') }}" class="btn btn-primary">Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="fab fa-github text-dark" style="font-size: 3rem;"></i>
+                            <h5 class="card-title mt-3">Open Source</h5>
+                            <p class="card-text">Check out my contributions to open source projects.</p>
+                            <a href="https://github.com/yourusername" class="btn btn-outline-primary" target="_blank">
+                                View GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

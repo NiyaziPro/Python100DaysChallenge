@@ -1,0 +1,235 @@
+{% extends "base.html" %}
+
+{% block title %}Resume - Niyazi Developer{% endblock %}
+
+{% block content %}
+<div class="container" style="margin-top: 100px;">
+    <section class="section-padding">
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold">Resume</h1>
+            <p class="lead text-muted">Full-Stack Python Developer</p>
+            <a href="#" class="btn btn-primary" onclick="window.print()">
+                <i class="fas fa-download me-2"></i>Download PDF
+            </a>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card">
+                    <div class="card-body p-5">
+                        <!-- Header -->
+                        <div class="text-center mb-5">
+                            <h2 class="fw-bold">Niyazi Developer</h2>
+                            <p class="text-muted">Full-Stack Python Developer</p>
+                            <p>
+                                <i class="fas fa-envelope me-2"></i>niyazi@example.com |
+                                <i class="fas fa-phone me-2"></i>+1 (234) 567-8900 | 
+                                <i class="fas fa-map-marker-alt me-2"></i>San Francisco, CA
+                            </p>
+                            <div class="d-flex justify-content-center gap-3">
+                                <a href="https://github.com/yourusername" class="text-decoration-none">
+                                    <i class="fab fa-github me-1"></i>GitHub
+                                </a>
+                                <a href="https://linkedin.com/in/yourusername" class="text-decoration-none">
+                                    <i class="fab fa-linkedin me-1"></i>LinkedIn
+                                </a>
+                                <a href="{{ url_for('home') }}" class="text-decoration-none">
+                                    <i class="fas fa-globe me-1"></i>Portfolio
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Summary -->
+                        <section class="mb-5">
+                            <h4 class="text-primary border-bottom pb-2 mb-3">Professional Summary</h4>
+                            <p>
+                                Passionate Full-Stack Python Developer with 3+ years of experience building scalable web applications 
+                                using Flask, SQLAlchemy, and modern frontend technologies. Strong problem-solving skills with a focus 
+                                on clean code, user experience, and performance optimization. Proven track record of delivering 
+                                high-quality solutions in fast-paced environments.
+                            </p>
+                        </section>
+                        
+                        <!-- Experience -->
+                        <section class="mb-5">
+                            <h4 class="text-primary border-bottom pb-2 mb-3">Professional Experience</h4>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <div>
+                                        <h5 class="mb-0">Full-Stack Developer</h5>
+                                        <h6 class="text-muted">Tech Solutions Inc. - San Francisco, CA</h6>
+                                    </div>
+                                    <span class="badge bg-primary">2023 - Present</span>
+                                </div>
+                                <ul>
+                                    <li>Developed and maintained 5+ web applications using Flask and Python, serving 10,000+ users</li>
+                                    <li>Implemented RESTful APIs with 99.9% uptime, handling 10,000+ daily requests</li>
+                                    <li>Improved application performance by 40% through database optimization and caching strategies</li>
+                                    <li>Collaborated with cross-functional teams using Agile methodologies and Git version control</li>
+                                    <li>Mentored junior developers and conducted code reviews to maintain coding standards</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <div>
+                                        <h5 class="mb-0">Junior Web Developer</h5>
+                                        <h6 class="text-muted">Digital Agency Co. - San Francisco, CA</h6>
+                                    </div>
+                                    <span class="badge bg-secondary">2022 - 2023</span>
+                                </div>
+                                <ul>
+                                    <li>Built responsive websites for 20+ clients using HTML, CSS, JavaScript, and Bootstrap</li>
+                                    <li>Integrated third-party APIs and payment systems (Stripe, PayPal) into client applications</li>
+                                    <li>Participated in code reviews and maintained coding standards across the development team</li>
+                                    <li>Reduced page load times by 30% through image optimization and code minification</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <div>
+                                        <h5 class="mb-0">Web Development Intern</h5>
+                                        <h6 class="text-muted">StartupXYZ - Remote</h6>
+                                    </div>
+                                    <span class="badge bg-secondary">Summer 2021</span>
+                                </div>
+                                <ul>
+                                    <li>Assisted in developing the company's main web application using Python and Flask</li>
+                                    <li>Created automated testing scripts that reduced manual testing time by 50%</li>
+                                    <li>Collaborated with design team to implement pixel-perfect UI components</li>
+                                </ul>
+                            </div>
+                        </section>
+                        
+                        <!-- Education -->
+                        <section class="mb-5">
+                            <h4 class="text-primary border-bottom pb-2 mb-3">Education</h4>
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h5 class="mb-0">Bachelor of Science in Computer Science</h5>
+                                    <h6 class="text-muted">University of Technology - San Francisco, CA</h6>
+                                    <p class="mb-0">
+                                        <strong>GPA:</strong> 3.8/4.0 | <strong>Magna Cum Laude</strong><br>
+                                        <strong>Relevant Coursework:</strong> Data Structures, Web Development, Database Systems, 
+                                        Software Engineering, Computer Networks
+                                    </p>
+                                </div>
+                                <span class="badge bg-secondary">2018 - 2022</span>
+                            </div>
+                        </section>
+                        
+                        <!-- Skills -->
+                        <section class="mb-5">
+                            <h4 class="text-primary border-bottom pb-2 mb-3">Technical Skills</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6><strong>Programming Languages</strong></h6>
+                                    <p>Python, JavaScript, HTML5, CSS3, SQL, Bash</p>
+                                    
+                                    <h6><strong>Frameworks & Libraries</strong></h6>
+                                    <p>Flask, SQLAlchemy, Bootstrap, jQuery, WTForms, Jinja2</p>
+                                    
+                                    <h6><strong>Databases</strong></h6>
+                                    <p>SQLite, PostgreSQL, MySQL, Redis</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6><strong>Tools & Technologies</strong></h6>
+                                    <p>Git, GitHub, VS Code, Postman, Docker, Linux</p>
+                                    
+                                    <h6><strong>Cloud & Deployment</strong></h6>
+                                    <p>Heroku, AWS, Digital Ocean, Nginx, Gunicorn</p>
+                                    
+                                    <h6><strong>Other Skills</strong></h6>
+                                    <p>RESTful APIs, Responsive Design, Agile/Scrum, Testing</p>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Projects -->
+                        <section class="mb-5">
+                            <h4 class="text-primary border-bottom pb-2 mb-3">Key Projects</h4>
+                            
+                            <div class="mb-3">
+                                <h6 class="mb-1"><strong>E-Commerce Platform</strong> 
+                                    <a href="{{ url_for('project_detail', project_id=1) }}" class="btn btn-sm btn-outline-primary ms-2">View Details</a>
+                                </h6>
+                                <p class="mb-1">Full-featured online store with user authentication, payment processing, and admin dashboard. 
+                                   Implemented shopping cart functionality, order management, and inventory tracking.</p>
+                                <small class="text-muted">Technologies: Flask, SQLAlchemy, Stripe API, Bootstrap, PostgreSQL</small>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <h6 class="mb-1"><strong>Blog Management System</strong>
+                                    <a href="{{ url_for('project_detail', project_id=2) }}" class="btn btn-sm btn-outline-primary ms-2">View Details</a>
+                                </h6>
+                                <p class="mb-1">Multi-user blog platform with rich text editor, comment system, and user roles. 
+                                   Features include post scheduling, categories, and SEO optimization.</p>
+                                <small class="text-muted">Technologies: Python, Flask, SQLite, CKEditor, Bootstrap</small>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <h6 class="mb-1"><strong>Weather Dashboard</strong>
+                                    <a href="{{ url_for('project_detail', project_id=3) }}" class="btn btn-sm btn-outline-primary ms-2">View Details</a>
+                                </h6>
+                                <p class="mb-1">Real-time weather application with interactive charts, location-based forecasts, 
+                                   and weather alerts. Integrated with multiple weather APIs for accurate data.</p>
+                                <small class="text-muted">Technologies: Flask, OpenWeather API, Chart.js, JavaScript, Bootstrap</small>
+                            </div>
+                        </section>
+                        
+                        <!-- Certifications -->
+                        <section class="mb-5">
+                            <h4 class="text-primary border-bottom pb-2 mb-3">Certifications & Training</h4>
+                            <ul>
+                                <li><strong>Python Web Development with Flask</strong> - Udemy (2023)</li>
+                                <li><strong>Complete Web Developer Bootcamp</strong> - The Web Developer Bootcamp (2022)</li>
+                                <li><strong>Git and GitHub Essentials</strong> - GitHub Learning Lab (2022)</li>
+                                <li><strong>AWS Cloud Practitioner</strong> - Amazon Web Services (2023)</li>
+                            </ul>
+                        </section>
+                        
+                        <!-- Awards & Achievements -->
+                        <section class="mb-5">
+                            <h4 class="text-primary border-bottom pb-2 mb-3">Awards & Achievements</h4>
+                            <ul>
+                                <li>Dean's List - University of Technology (2020, 2021, 2022)</li>
+                                <li>Best Student Project Award - Computer Science Department (2022)</li>
+                                <li>Hackathon Winner - SF TechWeek Code Challenge (2023)</li>
+                                <li>Employee of the Month - Tech Solutions Inc. (March 2024)</li>
+                            </ul>
+                        </section>
+                        
+                        <!-- Languages -->
+                        <section>
+                            <h4 class="text-primary border-bottom pb-2 mb-3">Languages</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>English:</strong> Native</p>
+                                    <p><strong>Spanish:</strong> Conversational</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>French:</strong> Basic</p>
+                                    <p><strong>Python:</strong> Fluent 😄</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+@media print {
+    .navbar, footer, .btn:not(.btn-outline-primary) { display: none !important; }
+    .container { margin-top: 0 !important; }
+    .section-padding { padding: 20px 0 !important; }
+    .card { box-shadow: none !important; border: 1px solid #dee2e6 !important; }
+    .text-primary { color: #000 !important; }
+    .badge { border: 1px solid #000 !important; background: white !important; color: #000 !important; }
+}
+</style>
+{% endblock %}

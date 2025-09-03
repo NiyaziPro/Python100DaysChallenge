@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 hero-content">
+                <h1 class="display-4 fw-bold mb-4">
+                    Hi, I'm <span class="text-warning">Niyazi</span>
+                </h1>
+                <h2 class="h3 mb-4 typing-animation">Full-Stack Python Developer</h2>
+                <p class="lead mb-5">
+                    I create beautiful and functional web applications using Python, Flask, and modern web technologies. 
+                    Passionate about clean code and user experience.
+                </p>
+                <div class="d-flex gap-3">
+                    <a href="{{ url_for('projects_page') }}" class="btn btn-primary btn-lg">
+                        <i class="fas fa-eye me-2"></i>View My Work
+                    </a>
+                    <a href="{{ url_for('contact') }}" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-envelope me-2"></i>Get In Touch
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="position-relative">
+                    <div class="bg-light rounded-circle p-5" style="width: 300px; height: 300px; margin: 0 auto; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-code text-primary" style="font-size: 8rem;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects -->
+<section class="section-padding">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Featured Projects</h2>
+            <p class="lead text-muted">Here are some of my recent works</p>
+        </div>
+        <div class="row g-4">
+            {% for project in projects %}
+            <div class="col-lg-4 col-md-6">
+                <div class="card project-card h-100">
+                    <div class="overflow-hidden">
+                        <img src="https://via.placeholder.com/400x250/6c63ff/ffffff?text={{ project.title }}" 
+                             class="card-img-top" alt="{{ project.title }}">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text flex-grow-1">{{ project.description }}</p>
+                        <div class="mb-3">
+                            {% for tech in project.tech %}
+                                <span class="skill-badge">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="d-flex gap-2">
+                            <a href="{{ project.github }}" class="btn btn-outline-primary btn-sm flex-fill" target="_blank">
+                                <i class="fab fa-github me-1"></i>Code
+                            </a>
+                            <a href="{{ project.demo }}" class="btn btn-primary btn-sm flex-fill" target="_blank">
+                                <i class="fas fa-external-link-alt me-1"></i>Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-5">
+            <a href="{{ url_for('projects_page') }}" class="btn btn-primary btn-lg">
+                <i class="fas fa-folder-open me-2"></i>View All Projects
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="section-padding bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Technical Skills</h2>
+            <p class="lead text-muted">Technologies I work with</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="text-center">
+                    <i class="fab fa-python text-primary mb-3" style="font-size: 3rem;"></i>
+                    <h5>Backend Development</h5>
+                    <p>Python, Flask, SQLAlchemy, API Development</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="text-center">
+                    <i class="fab fa-html5 text-primary mb-3" style="font-size: 3rem;"></i>
+                    <h5>Frontend Development</h5>
+                    <p>HTML5, CSS3, JavaScript, Bootstrap</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="text-center">
+                    <i class="fas fa-database text-primary mb-3" style="font-size: 3rem;"></i>
+                    <h5>Database Management</h5>
+                    <p>SQLite, PostgreSQL, MySQL</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="text-center">
+                    <i class="fab fa-git-alt text-primary mb-3" style="font-size: 3rem;"></i>
+                    <h5>Tools & Deployment</h5>
+                    <p>Git, GitHub, Heroku, VS Code</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section-padding gradient-bg text-white">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="display-5 fw-bold mb-4">Let's Work Together</h2>
+                <p class="lead mb-5">
+                    I'm always interested in new opportunities and interesting projects. 
+                    Let's discuss how we can bring your ideas to life.
+                </p>
+                <a href="{{ url_for('contact') }}" class="btn btn-light btn-lg">
+                    <i class="fas fa-comment me-2"></i>Start a Conversation
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Typing animation effect
+    const text = "Full-Stack Python Developer";
+    const element = document.querySelector('.typing-animation');
+    let index = 0;
+
+    function typeWriter() {
+        if (index < text.length) {
+            element.innerHTML = text.slice(0, index + 1);
+            index++;
+            setTimeout(typeWriter, 100);
+        }
+    }
+
+    // Start typing animation when page loads
+    window.addEventListener('load', typeWriter);
+</script>
+{% endblock %}

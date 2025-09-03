@@ -1,108 +1,110 @@
-from flask import Flask, render_template_string, request, redirect, url_for, flash, jsonify
+# app.py - Main Flask Application
+from flask import Flask, render_template, request, flash, redirect, url_for
+from flask_wtf import FlaskForm
+from wtforms import StringField, TextAreaField, EmailField, SubmitField
+from wtforms.validators import DataRequired, Email
+import os
+from datetime import datetime
 
 app = Flask(__name__)
-app.secret_key = "dev-secret-key"
+app.config['SECRET_KEY'] = 'your-secret-key-here'
 
-# Example project data (normally this would live in data/projects.json)
-PROJECTS = [
+
+# Contact Form
+class ContactForm(FlaskForm):
+    name = StringField('Name', validators=[DataRequired()])
+    email = EmailField('Email', validators=[DataRequired(), Email()])
+    message = TextAreaField('Message', validators=[DataRequired()])
+    submit = SubmitField('Send Message')
+
+
+# Sample project data
+projects = [
     {
-        "title": "Personal Blog (Flask)",
-        "slug": "flask-blog",
-        "summary": "A markdown-based blog built with Flask and SQLite.",
-        "description": "Full CRUD, tagging, markdown support, and deployment pipeline.",
-        "featured": True,
-        "tech": ["Flask", "SQLAlchemy", "Markdown"],
-        "link": "https://example.com"
+        'id': 1,
+        'title': 'E-Commerce Website',
+        'description': 'Full-stack e-commerce platform built with Flask, SQLAlchemy, and Bootstrap',
+        'tech': ['Flask', 'SQLAlchemy', 'Bootstrap', 'JavaScript'],
+        'image': 'ecommerce.jpg',
+        'github': 'https://github.com/yourusername/ecommerce-project',
+        'demo': 'https://your-ecommerce-demo.com'
     },
     {
-        "title": "Weather App (API)",
-        "slug": "weather-api-app",
-        "summary": "A small app that fetches weather from a public API.",
-        "description": "Shows usage of external APIs, caching, and error handling.",
-        "featured": True,
-        "tech": ["Flask", "Requests", "Redis"],
-        "link": "https://example.com"
+        'id': 2,
+        'title': 'Blog Platform',
+        'description': 'Dynamic blog platform with user authentication and admin panel',
+        'tech': ['Python', 'Flask', 'SQLite', 'HTML/CSS'],
+        'image': 'blog.jpg',
+        'github': 'https://github.com/yourusername/blog-platform',
+        'demo': 'https://your-blog-demo.com'
+    },
+    {
+        'id': 3,
+        'title': 'Weather App',
+        'description': 'Real-time weather application using OpenWeather API',
+        'tech': ['Flask', 'API Integration', 'JavaScript', 'Chart.js'],
+        'image': 'weather.jpg',
+        'github': 'https://github.com/yourusername/weather-app',
+        'demo': 'https://your-weather-demo.com'
+    },
+    {
+        'id': 4,
+        'title': 'Task Management System',
+        'description': 'Collaborative task management tool with real-time updates',
+        'tech': ['Flask-SocketIO', 'SQLAlchemy', 'Bootstrap', 'jQuery'],
+        'image': 'taskmanager.jpg',
+        'github': 'https://github.com/yourusername/task-manager',
+        'demo': 'https://your-taskmanager-demo.com'
     }
 ]
 
-# Minimal inline templates
-layout = """
-<!doctype html>
-<html lang="en">
-<head><meta charset="utf-8"><title>{{ title or 'My Portfolio' }}</title></head>
-<body>
-<nav>
-  <a href="/">Home</a> |
-  <a href="/projects">Projects</a> |
-  <a href="/about">About</a> |
-  <a href="/contact">Contact</a>
-</nav>
-<hr>
-{% with messages = get_flashed_messages() %}
-  {% if messages %}
-    <ul>{% for m in messages %}<li>{{ m }}</li>{% endfor %}</ul>
-  {% endif %}
-{% endwith %}
+# Skills data
+skills = {
+    'Programming Languages': ['Python', 'JavaScript', 'HTML5', 'CSS3', 'SQL'],
+    'Frameworks & Libraries': ['Flask', 'Bootstrap', 'jQuery', 'SQLAlchemy', 'WTForms'],
+    'Databases': ['SQLite', 'PostgreSQL', 'MySQL'],
+    'Tools & Technologies': ['Git', 'GitHub', 'VS Code', 'Postman', 'Heroku']
+}
 
-{% block content %}{% endblock %}
-</body>
-</html>
-"""
 
 @app.route('/')
-def index():
-    featured = [p for p in PROJECTS if p.get('featured')][:3]
-    template = """{% extends layout %}{% block content %}
-    <h1>Welcome to my Portfolio</h1>
-    <h2>Featured Projects</h2>
-    <ul>{% for p in projects %}<li><a href='/projects/{{p.slug}}'>{{p.title}}</a></li>{% endfor %}</ul>
-    {% endblock %}"""
-    return render_template_string(template, layout=layout, projects=featured)
+def home():
+    return render_template('index.html', projects=projects[:3])
+
 
 @app.route('/about')
 def about():
-    template = """{% extends layout %}{% block content %}<h1>About</h1><p>This is my portfolio site built with Flask.</p>{% endblock %}"""
-    return render_template_string(template, layout=layout)
+    return render_template('about.html', skills=skills)
+
 
 @app.route('/projects')
-def projects():
-    template = """{% extends layout %}{% block content %}<h1>All Projects</h1>
-    <ul>{% for p in projects %}<li><a href='/projects/{{p.slug}}'>{{p.title}}</a></li>{% endfor %}</ul>
-    {% endblock %}"""
-    return render_template_string(template, layout=layout, projects=PROJECTS)
+def projects_page():
+    return render_template('projects.html', projects=projects)
 
-@app.route('/projects/<slug>')
-def project_detail(slug):
-    project = next((p for p in PROJECTS if p['slug'] == slug), None)
+
+@app.route('/project/<int:project_id>')
+def project_detail(project_id):
+    project = next((p for p in projects if p['id'] == project_id), None)
     if not project:
-        return "<h1>404 - Project Not Found</h1>", 404
-    template = """{% extends layout %}{% block content %}
-    <h1>{{ project.title }}</h1>
-    <p>{{ project.description }}</p>
-    <p><strong>Tech:</strong> {{ project.tech|join(', ') }}</p>
-    <p><a href='{{ project.link }}'>Live demo / repo</a></p>
-    {% endblock %}"""
-    return render_template_string(template, layout=layout, project=project)
+        return "Project not found", 404
+    return render_template('project_detail.html', project=project)
+
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
-    if request.method == 'POST':
-        flash('Thanks for your message — I will reply soon!')
+    form = ContactForm()
+    if form.validate_on_submit():
+        # In a real application, you would send an email or save to database
+        flash(f'Thank you {form.name.data}! Your message has been sent.', 'success')
         return redirect(url_for('contact'))
-    template = """{% extends layout %}{% block content %}
-    <h1>Contact</h1>
-    <form method='post'>
-      <input name='name' placeholder='Your Name'><br>
-      <input name='email' type='email' placeholder='Your Email'><br>
-      <textarea name='message' placeholder='Message'></textarea><br>
-      <button type='submit'>Send</button>
-    </form>
-    {% endblock %}"""
-    return render_template_string(template, layout=layout)
+    return render_template('contact.html', form=form)
 
-@app.route('/api/projects')
-def api_projects():
-    return jsonify(PROJECTS)
+
+@app.route('/resume')
+def resume():
+    return render_template('resume.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
+
